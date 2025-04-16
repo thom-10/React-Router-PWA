@@ -53,11 +53,11 @@ export function ReactRouterPreset(): ReactRouterPresetType {
       try {
         await access('.react-router', constants.F_OK)
       }
-      catch (err) {
+      catch (_err) {
         mkdir('.react-router')
       }
 
-      const storeFilePath = `${rootDirectory}/.react-router/react-router-pwa-rotues.json`
+      const storeFilePath = `${rootDirectory}/.react-router/react-router-pwa-routes.json`
 
       await writeFile(storeFilePath, JSON.stringify(reactRouterConfig))
     },

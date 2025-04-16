@@ -8,7 +8,7 @@ import type { ReactRouterPWAOptions } from './index'
 
 export function loadReactRouterConfig(): BasePWAContext['resolvedConfig'] {
   const rootDirectory = process.env.REACT_ROUTER_ROOT ?? process.cwd()
-  const storeFilePath = `${rootDirectory}/.react-router/react-router-pwa-rotues.json`
+  const storeFilePath = `${rootDirectory}/.react-router/react-router-pwa-routes.json`
   const reactRouterResolvedConfig = readFileSync(storeFilePath)
   return JSON.parse(reactRouterResolvedConfig.toString())
 }
