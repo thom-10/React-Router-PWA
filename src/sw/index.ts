@@ -38,9 +38,9 @@ export function setupPwa(options: PwaOptions = {}) {
   if (import.meta.env.DEV) {
     // eslint-disable-next-line no-console
     console.info(
-        `React Router PWA v${version}, using ${
-            promptForUpdate ? 'prompt-for-update' : 'auto-update'
-        } register mode`,
+      `React Router PWA v${version}, using ${
+        promptForUpdate ? 'prompt-for-update' : 'auto-update'
+      } register mode`,
     )
   }
 

@@ -49,13 +49,13 @@ export async function setupRoutes() {
   }
   if (useDynamicRoutes.length) {
     const dynamicRoutesRegexp = new RegExp(`^${baseUrl}(${useDynamicRoutes.map((r) => {
-        const parts = r.split('/')
-        parts.forEach((part, i) => {
-          if (part.startsWith(':'))
-            parts[i] = '([^/]+)'
-        })
-        return `(${parts.join('/')})`
-      }).join('|')})$`)
+      const parts = r.split('/')
+      parts.forEach((part, i) => {
+        if (part.startsWith(':'))
+          parts[i] = '([^/]+)'
+      })
+      return `(${parts.join('/')})`
+    }).join('|')})$`)
     registerRoute(
       ({ request, sameOrigin, url }) => request.destination === 'document' && sameOrigin && dynamicRoutesRegexp.test(url.pathname),
       new NetworkOnly({

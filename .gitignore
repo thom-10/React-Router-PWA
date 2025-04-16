@@ -1,6 +1,6 @@
 node_modules
 .DS_Store
-dist/
+# dist/
 build/
 dev-dist
 # intellij stuff
